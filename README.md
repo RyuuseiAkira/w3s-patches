@@ -48,6 +48,9 @@ Technical notes, bytecode hooks, regex targets, and client/server scope live in 
 
 - [Unlimited energy](docs/unlimited-energy.md)
 - [Unlock curriculum map](docs/unlock-curriculum-map.md)
+- [Bypass forced updates](docs/bypass-forced-updates.md)
+- [Disable tracking and analytics](docs/disable-telemetry.md)
+- [Unlock avatar customization](docs/unlock-avatar-customization.md)
 - [MicroG-RE support](docs/microg-re-support.md)
 - [Pairip bypass & client/server boundaries](docs/pairip-and-limitations.md)
 
