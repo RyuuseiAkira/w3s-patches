@@ -16,6 +16,7 @@ For Google Sign-In, install [**MicroG-RE**](https://github.com/MorpheApp/MicroG-
 
 > GPLv3 · Not affiliated with W3Schools. Targets the W3Schools versions in the patch list below.
 > *MicroG-RE support* is **off by default** — enable it if you want to sign in with Google.
+> *Unlock avatar customization* removes client-side locks; saving custom items remains subject to server validation.
 > All patches include an internal Pairip license check bypass so sideloaded builds start cleanly.
 > Server-enforced features (Code Duel daily cap, Full Access, certification exams, and backend
 > League XP boost) stay controlled by W3Schools' servers.
