@@ -22,14 +22,14 @@ val microGRESupportPatch = patch(
     name = "MicroG-RE support",
     description = "Redirects Google Play Services and Credential Manager to MicroG-RE (app.revanced.android.gms) " +
         "with package and signature spoofing so Google Sign-In works on re-signed builds.",
-    default = true,
+    default = false,
 ) {
     compatibleWith(COMPATIBILITY_W3SCHOOLS)
 
     availability { installer, _ ->
         when (installer) {
             InstallerType.MOUNT -> PatchAvailability.UNAVAILABLE
-            InstallerType.STANDARD, InstallerType.SHIZUKU -> PatchAvailability.ENABLED
+            InstallerType.STANDARD, InstallerType.SHIZUKU -> PatchAvailability.DISABLED
         }
     }
 

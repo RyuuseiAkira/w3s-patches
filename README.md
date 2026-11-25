@@ -10,20 +10,36 @@ Morphe patches for **W3Schools** (`com.w3schools.app.prod`).
 **Manually:** Morphe Manager → patch sources **+** → **Remote** → paste
 `https://github.com/RyuuseiAkira/w3s-patches`
 
-Uninstall the Play Store version of W3Schools first, as the patched build is signed with a different key.
-For **Continue with Google**, install [**MicroG-RE**](https://github.com/MorpheApp/MicroG-RE/releases) (`app.revanced.android.gms`) and sign in to your Google account inside MicroG-RE before logging into the patched app.
+Uninstall the Play Store version of W3Schools first. The patched build is signed with a different key.
+For Google Sign-In, install [**MicroG-RE**](https://github.com/MorpheApp/MicroG-RE/releases)
+(`app.revanced.android.gms`) and add your Google account there before signing in.
 
 > GPLv3 · Not affiliated with W3Schools. Targets the W3Schools versions in the patch list below.
-> All three patches automatically apply an internal Pairip license check bypass so re-signed sideloaded builds launch cleanly. Server-enforced features (Code Duel quota, Full Access entitlements, certification exams, and backend League XP boost) remain controlled by W3Schools' backend.
+> *MicroG-RE support* is **off by default** — enable it if you want to sign in with Google.
+> All patches include an internal Pairip license check bypass so sideloaded builds start cleanly.
+> Server-enforced features (Code Duel daily cap, Full Access, certification exams, and backend
+> League XP boost) stay controlled by W3Schools' servers.
 
 ## 🩹 Patches
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.0.0](https://github.com/RyuuseiAkira/w3s-patches/releases/tag/v1.0.0)**&nbsp;&nbsp;&middot;&nbsp;&nbsp;`main`&nbsp;&nbsp;&middot;&nbsp;&nbsp;**3 patches** across **1 app**&nbsp;&nbsp;&middot;&nbsp;&nbsp;[Full details](PATCHES.md)
+> **[v1.0.0](https://github.com/RyuuseiAkira/w3s-patches/releases/tag/v1.0.0)**&nbsp;&nbsp;•&nbsp;&nbsp;3 patches total
+<details open>
+<summary>📦 W3Schools&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
+<br>
 
-| # | App | Patches | Version | Package |
-|---|---|---|---|---|
-| 1 | [**W3Schools**](PATCHES.md#w3schools-comw3schoolsappprod) | 3 | `1.0.8` | [`com.w3schools.app.prod`](https://play.google.com/store/apps/details?id=com.w3schools.app.prod) |
+**🎯 Supported versions:**
+
+| 1.0.8 |
+| :---: |
+
+| 💊&nbsp;Patch | 📜&nbsp;Description |
+|----------|----------------|
+| **MicroG-RE support** | Redirects Google Play Services and Credential Manager to MicroG-RE (app.revanced.android.gms) with package and signature spoofing so Google Sign-In works on re-signed builds. |
+| **Unlimited energy** | Bypasses client-side energy consumption and always reports full energy charges. |
+| **Unlock curriculum map** | Unlocks sequential lessons, checkpoints, and milestones on the curriculum map. |
+
+</details>
 <!-- PATCHES_END -->
 
 ## 🛠️ Building locally
@@ -37,5 +53,5 @@ For **Continue with Google**, install [**MicroG-RE**](https://github.com/MorpheA
 
 ## 🙏 Credits
 
-- Built using [MorpheApp/morphe-patches-template](https://github.com/MorpheApp/morphe-patches-template) and [MorpheApp/morphe-patcher](https://github.com/MorpheApp/morphe-patcher) (GPLv3).
+- Built with [MorpheApp/morphe-patches-template](https://github.com/MorpheApp/morphe-patches-template) and [MorpheApp/morphe-patcher](https://github.com/MorpheApp/morphe-patcher) (GPLv3).
 - **MicroG-RE support**: adapted from [MorpheApp/morphe-patches](https://github.com/MorpheApp/morphe-patches) GmsCore support (GPLv3) for [MorpheApp/MicroG-RE](https://github.com/MorpheApp/MicroG-RE).
