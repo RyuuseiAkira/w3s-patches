@@ -1,7 +1,7 @@
 {
-  "created_at": "",
-  "description": "",
-  "download_url": "",
+  "created_at": "2026-11-25T08:35:32",
+  "description": "## 1.0.0-dev.1 (2026-11-25)\n\n### ✨ New Features\n\n* add W3Schools unlimited energy, curriculum map unlock, and MicroG-RE patches ([880a9f2](https://github.com/RyuuseiAkira/w3s-patches/commit/880a9f2018024c0d83ac0a82af047a8d9a3be330))\n\n### 🐛 Bug Fixes\n\n* set gradlew executable bit and update README ([0c80aa9](https://github.com/RyuuseiAkira/w3s-patches/commit/0c80aa98b731aa0f951137128c63a9371b8d43ad))",
+  "download_url": "https://github.com/RyuuseiAkira/w3s-patches/releases/download/v1.0.0-dev.1/patches-1.0.0-dev.1.mpp",
   "signature_download_url": "",
-  "version": ""
+  "version": "1.0.0-dev.1"
 }
