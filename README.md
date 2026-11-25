@@ -19,22 +19,11 @@ For **Continue with Google**, install [**MicroG-RE**](https://github.com/MorpheA
 ## 🩹 Patches
 
 <!-- PATCHES_START EXPANDED -->
-<details open>
-<summary>📦 W3Schools&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
-<br>
+> **[v1.0.0](https://github.com/RyuuseiAkira/w3s-patches/releases/tag/v1.0.0)**&nbsp;&nbsp;&middot;&nbsp;&nbsp;`main`&nbsp;&nbsp;&middot;&nbsp;&nbsp;**3 patches** across **1 app**&nbsp;&nbsp;&middot;&nbsp;&nbsp;[Full details](PATCHES.md)
 
-**🎯 Supported versions:**
-
-| 1.0.8 |
-| :---: |
-
-| 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
-|----------|----------------|-----------|
-| **MicroG-RE support** | Redirects Google Play Services and Credential Manager to MicroG-RE (`app.revanced.android.gms`) with package and signature spoofing so Google Sign-In works on re-signed builds. |  |
-| **Unlimited energy** | Bypasses client-side energy consumption and always reports full energy charges. |  |
-| **Unlock curriculum map** | Unlocks sequential lessons, checkpoints, and milestones on the curriculum map. |  |
-
-</details>
+| # | App | Patches | Version | Package |
+|---|---|---|---|---|
+| 1 | [**W3Schools**](PATCHES.md#w3schools-comw3schoolsappprod) | 3 | `1.0.8` | [`com.w3schools.app.prod`](https://play.google.com/store/apps/details?id=com.w3schools.app.prod) |
 <!-- PATCHES_END -->
 
 ## 🛠️ Building locally
