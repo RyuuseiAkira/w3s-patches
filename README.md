@@ -23,9 +23,9 @@ For Google Sign-In, install [**MicroG-RE**](https://github.com/MorpheApp/MicroG-
 ## 🩹 Patches
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.0.1](https://github.com/RyuuseiAkira/w3s-patches/releases/tag/v1.0.1)**&nbsp;&nbsp;•&nbsp;&nbsp;3 patches total
+> **[v1.1.0-dev.1](https://github.com/RyuuseiAkira/w3s-patches/releases/tag/v1.1.0-dev.1)**&nbsp;&nbsp;•&nbsp;&nbsp;6 patches total
 <details open>
-<summary>📦 W3Schools&nbsp;&nbsp;•&nbsp;&nbsp;3 patches</summary>
+<summary>📦 W3Schools&nbsp;&nbsp;•&nbsp;&nbsp;6 patches</summary>
 <br>
 
 **🎯 Supported versions:**
@@ -35,9 +35,12 @@ For Google Sign-In, install [**MicroG-RE**](https://github.com/MorpheApp/MicroG-
 
 | 💊&nbsp;Patch | 📜&nbsp;Description |
 |----------|----------------|
+| **Bypass forced updates** | Prevents remote minimumClientBuild version lockouts and disables Play in-app review prompts on sideloaded builds. |
+| **Disable tracking and analytics** | Disables Meta AppEvents, AdServices attribution, AAID/InstallReferrer harvesting, and RevenueCat diagnostic telemetry while preserving login and billing. |
 | **MicroG-RE support** | Redirects Google Play Services and Credential Manager to MicroG-RE (app.revanced.android.gms) with package and signature spoofing so Google Sign-In works on re-signed builds. |
-| **Unlimited energy** | Bypasses client-side energy consumption and always reports full energy charges. |
-| **Unlock curriculum map** | Unlocks sequential lessons, checkpoints, and milestones on the curriculum map. |
+| **Unlimited energy** | Bypasses client-side energy consumption, reports full charges, and shows the unlimited energy UI. |
+| **Unlock avatar customization** | Unlocks locked avatar customization cards and bypasses client-side save validation (server validation may still apply when saving). |
+| **Unlock curriculum map** | Unlocks sequential lessons, checkpoints, and milestones on the curriculum map and removes overview unlock upsell banners. |
 
 </details>
 <!-- PATCHES_END -->

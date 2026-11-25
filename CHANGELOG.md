@@ -1,3 +1,9 @@
+## [1.1.0-dev.1](https://github.com/RyuuseiAkira/w3s-patches/compare/v1.0.1...v1.1.0-dev.1) (2026-11-25)
+
+### ✨ New Features
+
+* add forced update bypass, telemetry opt-out, avatar unlock, and energy/overview UI polish ([aa721c6](https://github.com/RyuuseiAkira/w3s-patches/commit/aa721c6720a123c96f0c4f6202f64ad11e53a040))
+
 ## [1.0.1](https://github.com/RyuuseiAkira/w3s-patches/compare/v1.0.0...v1.0.1) (2026-11-25)
 
 ### 🐛 Bug Fixes
