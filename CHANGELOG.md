@@ -1,3 +1,9 @@
+## [1.1.0-dev.2](https://github.com/RyuuseiAkira/w3s-patches/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2026-11-25)
+
+### 🐛 Bug Fixes
+
+* remove Unlock avatar customization patch (server-enforced asset ownership) ([f798e49](https://github.com/RyuuseiAkira/w3s-patches/commit/f798e493f9565ddbe52380f196973f948bfbd3fd))
+
 ## [1.1.0-dev.1](https://github.com/RyuuseiAkira/w3s-patches/compare/v1.0.1...v1.1.0-dev.1) (2026-11-25)
 
 ### ✨ New Features
