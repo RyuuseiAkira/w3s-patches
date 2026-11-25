@@ -3,7 +3,7 @@
 ## Internal Pairip License Check Bypass
 
 - **Dependency name:** `pairipLicenseBypassPatch` (internal, unnamed — hidden from user selection UI)
-- **Attached to:** `Unlimited energy`, `Unlock curriculum map`, `Bypass forced updates`, `Disable tracking and analytics`, `Unlock avatar customization`, `MicroG-RE support`
+- **Attached to:** `Unlimited energy`, `Unlock curriculum map`, `Bypass forced updates`, `Disable tracking and analytics`, `MicroG-RE support`
 - **Sources:**
   - [`PairipLicenseBypassPatch.kt`](../patches/src/main/kotlin/app/w3s/patches/w3schools/misc/pairip/PairipLicenseBypassPatch.kt)
   - [`Fingerprints.kt`](../patches/src/main/kotlin/app/w3s/patches/w3schools/misc/pairip/Fingerprints.kt)
@@ -24,7 +24,7 @@ via `PairipCheckLicenseFingerprint` and prepends `return-void` at index `0` (`me
 
 ## Client-Side vs. Server-Enforced Features
 
-These patches modify only code and assets executed on-device. Features validated on W3Schools' backend remain unchanged or subject to backend checks:
+These patches modify only code and assets executed on-device. Features validated on W3Schools' backend remain unchanged:
 
 | Feature | Enforced Where | Patched Behavior |
 |---|---|---|
@@ -32,9 +32,9 @@ These patches modify only code and assets executed on-device. Features validated
 | Sequential curriculum map progression & overview upsell | Client-side JS chunks | **Unlocked** (`Unlock curriculum map`) |
 | `minimumClientBuild` update lockout & Play review prompts | Client-side JS chunk | **Bypassed** (`Bypass forced updates`) |
 | Meta AppEvents, AAID, AdServices, RC diagnostics | Android DEX / XML / Manifest | **Disabled** (`Disable tracking and analytics`) |
-| Avatar customization cards & save guard | Client-side JS + server PUT | **Client unlocked** (`Unlock avatar customization`; server save checks may apply) |
 | Google Sign-In on re-signed APK | Android DEX / Manifest | **Supported** via `MicroG-RE support` (optional) |
 | Play license check on startup | Java Pairip client | **Bypassed** automatically (`pairipLicenseBypassPatch`) |
+| Avatar customization (`PUT /user/profile`) | Server asset ownership | Rejects unclaimed items (`"Asset is not claimed"`) |
 | Code Duel daily quota | Server API | Remains server-enforced |
 | Full Access / Hero subscription & trial | Server account entitlements | Remains server-enforced |
 | Certification exams | Server account entitlements | Remains server-enforced |
