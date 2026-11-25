@@ -42,6 +42,15 @@ For Google Sign-In, install [**MicroG-RE**](https://github.com/MorpheApp/MicroG-
 </details>
 <!-- PATCHES_END -->
 
+## 📚 Documentation
+
+Technical notes, bytecode hooks, regex targets, and client/server scope live in [`docs/`](docs/README.md):
+
+- [Unlimited energy](docs/unlimited-energy.md)
+- [Unlock curriculum map](docs/unlock-curriculum-map.md)
+- [MicroG-RE support](docs/microg-re-support.md)
+- [Pairip bypass & client/server boundaries](docs/pairip-and-limitations.md)
+
 ## 🛠️ Building locally
 
 - `./gradlew buildAndroid` → the bundle lands in `patches/build/libs/patches-*.mpp`
