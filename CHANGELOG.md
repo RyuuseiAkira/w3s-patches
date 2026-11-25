@@ -1,4 +1,10 @@
-## 1.0.0-dev.1 (2026-11-25)
+## [1.0.1](https://github.com/RyuuseiAkira/w3s-patches/compare/v1.0.0...v1.0.1) (2026-11-25)
+
+### 🐛 Bug Fixes
+
+* make MicroG-RE support optional and remove Options column in README ([271674f](https://github.com/RyuuseiAkira/w3s-patches/commit/271674fee95b062883636b88cf50931041942d66))
+
+## 1.0.0 (2026-11-25)
 
 ### ✨ New Features
 
