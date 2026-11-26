@@ -1,15 +1,10 @@
 # Patches
 
-> Generated from `patches-list.json` — **v1.2.0** (`main`) · **7 patches** · back to [README](README.md)
+> Generated from `patches-list.json` — **v1.2.1** (`main`) · **7 patches** · back to [README](README.md)
 
 ---
 
 ## W3Schools (com.w3schools.app.prod)
-
-**Supported versions:**
-
-| 1.0.8 |
-| :---: |
 
 | 💊&nbsp;Patch | 📜&nbsp;Description |
 |----------|----------------|

@@ -1,3 +1,9 @@
+## [1.2.1](https://github.com/RyuuseiAkira/w3s-patches/compare/v1.2.0...v1.2.1) (2026-11-26)
+
+### 🐛 Bug Fixes
+
+* enable any-version compatibility and harden matchers for future versions ([b0b1996](https://github.com/RyuuseiAkira/w3s-patches/commit/b0b1996d1d388fdd529a20a11f97f8587374791b))
+
 ## [1.2.0](https://github.com/RyuuseiAkira/w3s-patches/compare/v1.1.0...v1.2.0) (2026-11-26)
 
 ### ✨ New Features
