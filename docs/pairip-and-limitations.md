@@ -3,7 +3,7 @@
 ## Internal Pairip License Check Bypass
 
 - **Dependency name:** `pairipLicenseBypassPatch` (internal, unnamed — hidden from user selection UI)
-- **Attached to:** `Unlimited energy`, `Unlock curriculum map`, `Bypass forced updates`, `Disable tracking and analytics`, `MicroG-RE support`
+- **Attached to:** `Unlimited energy`, `Unlock curriculum map`, `Bypass forced updates`, `Disable tracking and analytics`, `Hide upgrade prompts`, `Enable developer tools`, `MicroG-RE support`
 - **Sources:**
   - [`PairipLicenseBypassPatch.kt`](../patches/src/main/kotlin/app/w3s/patches/w3schools/misc/pairip/PairipLicenseBypassPatch.kt)
   - [`Fingerprints.kt`](../patches/src/main/kotlin/app/w3s/patches/w3schools/misc/pairip/Fingerprints.kt)

@@ -52,6 +52,8 @@ Technical notes, bytecode hooks, regex targets, and client/server scope live in 
 - [Unlock curriculum map](docs/unlock-curriculum-map.md)
 - [Bypass forced updates](docs/bypass-forced-updates.md)
 - [Disable tracking and analytics](docs/disable-telemetry.md)
+- [Hide upgrade prompts](docs/hide-upgrade-prompts.md)
+- [Enable developer tools](docs/enable-developer-tools.md)
 - [MicroG-RE support](docs/microg-re-support.md)
 - [Pairip bypass & client/server boundaries](docs/pairip-and-limitations.md)
 
