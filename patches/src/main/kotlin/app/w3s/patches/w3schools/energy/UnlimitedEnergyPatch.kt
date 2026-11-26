@@ -11,15 +11,16 @@ import app.w3s.patches.w3schools.shared.Constants.COMPATIBILITY_W3SCHOOLS
 private const val CHUNKS_PREFIX = "assets/public/_next/static/chunks/"
 private const val IDENT = """[A-Za-z_${'$'}][\w${'$'}]*"""
 
-private val ENERGY_FUNCTIONS_REGEX = Regex(
-    """async function ($IDENT)\(\)\{return ($IDENT)\(($IDENT)\(\(await \(0,$IDENT\.apiRequest\)\(($IDENT)\(\)\)\)\.userEnergy\)\)\}""" +
-        """async function ($IDENT)\(\)\{try\{let $IDENT=await \(0,$IDENT\.apiRequest\)\(`\$\{\4\(\)\}/decrement`,\{method:"POST"\}\),$IDENT=\2\(\3\($IDENT\.userEnergy\)\);return\{success:!0,snapshot:$IDENT\}\}catch\($IDENT\)\{.*?return\{success:!1,snapshot:null\}\}\}""",
+private val GET_ENERGY_REGEX = Regex(
+    """async function ($IDENT)\(\)\{return ($IDENT)\(($IDENT)\(\(await \(0,$IDENT\.apiRequest\)\(($IDENT)\(\)\)\)\.userEnergy\)\)\}""",
+)
+
+private val CONSUME_ENERGY_REGEX = Regex(
+    """async function ($IDENT)\(\)\{try\{let $IDENT=await \(0,$IDENT\.apiRequest\)\(`\$\{$IDENT\(\)\}/decrement`,\{method:"POST"\}\),$IDENT=($IDENT)\($IDENT\($IDENT\.userEnergy\)\);return\{success:!0,snapshot:$IDENT\}\}catch\($IDENT\)\{[\s\S]*?return\{success:!1,snapshot:null\}\}\}""",
 )
 
 private val ENERGY_PAGE_REGEX = Regex(
-    """(function $IDENT\(\)\{let\{isFreeUser:($IDENT),isLoading:($IDENT)\}=\(0,$IDENT\.useUser\)\(\),""" +
-        """\{goToUpgrade:$IDENT\}=\(0,$IDENT\.useUpgradeFlow\)\(\),""" +
-        """\{energy:$IDENT,hasLoaded:$IDENT\}=\(0,$IDENT\.useEnergy\)\(\{enabled:)\2&&!\3(\}\);return )\2(?=\?\(0,$IDENT\.jsx\)\()""",
+    """(function $IDENT\(\)\{let\{[^}]*isFreeUser:($IDENT)[^}]*\}=\(0,$IDENT\.useUser\)\(\)[^;]*\{[^}]*energy:$IDENT[^}]*\}=\(0,$IDENT\.useEnergy\)\(\{enabled:)\2&&!$IDENT(\}\);return )\2(?=\?\(0,$IDENT\.jsx\)\()""",
 )
 
 private val TOPBAR_ENERGY_REGEX = Regex(
@@ -27,19 +28,19 @@ private val TOPBAR_ENERGY_REGEX = Regex(
         """icon:($IDENT)&&!$IDENT\?\(0,$IDENT\.jsx\)\($IDENT,\{\}\):""" +
         """\1\?\(0,$IDENT\.jsx\)\($IDENT\.EnergyTopBarBatteryIcon,\{chargeCount:$IDENT\.chargeCount\}\):""" +
         """(\(0,$IDENT\.jsx\)\($IDENT\.BatteryIcon,\{\}\)),""" +
-        """value:\1&&!$IDENT\?\(0,$IDENT\.jsx\)\("span",\{className:"block h-4 w-4 animate-pulse rounded-sm bg-\[color:var\(--base-border-muted\)\]"\}\):""" +
+        """value:\1&&!$IDENT\?\(0,$IDENT\.jsx\)\("span",\{className:"[^"]*"\}\):""" +
         """\1\?$IDENT\.currentEnergy:(\(0,$IDENT\.jsx\)\($IDENT\.InfinityIcon,\{\}\))""",
 )
 
 private val CURRICULUM_HEADER_ENERGY_REGEX = Regex(
     """$IDENT\?$IDENT\?\(0,$IDENT\.jsxs\)\($IDENT\.Fragment,""" +
-        """\{children:\[\(0,$IDENT\.jsx\)\("div",\{className:"flex h-6 w-6 items-center justify-center text-card-foreground",""" +
-        """children:\(0,$IDENT\.jsx\)\($IDENT\.EnergyTopBarBatteryIcon,\{chargeCount:$IDENT\.chargeCount,className:"text-card-foreground"\}\)\}\),""" +
-        """\(0,$IDENT\.jsx\)\("p",\{className:"font-mono text-sm font-medium text-card-foreground",children:$IDENT\.currentEnergy\}\)\]\}\):""" +
+        """\{children:\[\(0,$IDENT\.jsx\)\("div",\{className:"[^"]*",""" +
+        """children:\(0,$IDENT\.jsx\)\($IDENT\.EnergyTopBarBatteryIcon,\{chargeCount:$IDENT\.chargeCount(?:,className:"[^"]*")?\}\)\}\),""" +
+        """\(0,$IDENT\.jsx\)\("p",\{className:"[^"]*",children:$IDENT\.currentEnergy\}\)\]\}\):""" +
         """\(0,$IDENT\.jsx\)\($IDENT,\{\}\):""" +
-        """(\(0,$IDENT\.jsxs\)\($IDENT\.Fragment,\{children:\[\(0,$IDENT\.jsx\)\("div",\{className:"flex h-6 w-6 items-center justify-center text-card-foreground",""" +
+        """(\(0,$IDENT\.jsxs\)\($IDENT\.Fragment,\{children:\[\(0,$IDENT\.jsx\)\("div",\{className:"[^"]*",""" +
         """children:\(0,$IDENT\.jsx\)\($IDENT\.BatteryIcon,\{\}\)\}\),""" +
-        """\(0,$IDENT\.jsx\)\("p",\{className:"font-mono text-sm font-medium text-card-foreground",children:\(0,$IDENT\.jsx\)\($IDENT\.InfinityIcon,\{\}\)\}\)\]\}\))""",
+        """\(0,$IDENT\.jsx\)\("p",\{className:"[^"]*",children:\(0,$IDENT\.jsx\)\($IDENT\.InfinityIcon,\{\}\)\}\)\]\}\))""",
 )
 
 private val PROFILE_ENERGY_REGEX = Regex(
@@ -58,7 +59,8 @@ val unlimitedEnergyPatch = patch(
 
     execute {
         val chunkEntries = listApkEntries(CHUNKS_PREFIX).filter { it.endsWith(".js") }
-        var patchedCoreCount = 0
+        var patchedGetCount = 0
+        var patchedConsumeCount = 0
 
         for (entry in chunkEntries) {
             val file = resourceFile(entry)
@@ -66,24 +68,36 @@ val unlimitedEnergyPatch = patch(
             var changed = false
 
             if (content.contains("/competency-api/user-energy")) {
-                val match = ENERGY_FUNCTIONS_REGEX.find(content)
-                    ?: throw PatchException("Found user-energy chunk $entry, but expected functions did not match.")
+                GET_ENERGY_REGEX.find(content)?.let { match ->
+                    val getEnergyFn = match.groupValues[1]
+                    val toSnapshotFn = match.groupValues[2]
+                    val fullSnapshot =
+                        "$toSnapshotFn({totalEnergy:3,currentEnergy:3,nextRechargeAt:null,rechargeIntervalMinutes:480})"
+                    content = content.replaceRange(
+                        match.range,
+                        "async function $getEnergyFn(){return $fullSnapshot}",
+                    )
+                    patchedGetCount++
+                    changed = true
+                }
 
-                val getEnergyFn = match.groupValues[1]
-                val toSnapshotFn = match.groupValues[2]
-                val consumeEnergyFn = match.groupValues[5]
-                val fullSnapshot = "$toSnapshotFn({totalEnergy:3,currentEnergy:3,nextRechargeAt:null,rechargeIntervalMinutes:480})"
-                val replacement = "async function $getEnergyFn(){return $fullSnapshot}" +
-                    "async function $consumeEnergyFn(){return{success:!0,snapshot:$fullSnapshot}}"
-
-                content = content.replaceRange(match.range, replacement)
-                patchedCoreCount++
-                changed = true
+                CONSUME_ENERGY_REGEX.find(content)?.let { match ->
+                    val consumeEnergyFn = match.groupValues[1]
+                    val toSnapshotFn = match.groupValues[2]
+                    val fullSnapshot =
+                        "$toSnapshotFn({totalEnergy:3,currentEnergy:3,nextRechargeAt:null,rechargeIntervalMinutes:480})"
+                    content = content.replaceRange(
+                        match.range,
+                        "async function $consumeEnergyFn(){return{success:!0,snapshot:$fullSnapshot}}",
+                    )
+                    patchedConsumeCount++
+                    changed = true
+                }
             }
 
             if (content.contains("Get unlimited energy!")) {
                 ENERGY_PAGE_REGEX.find(content)?.let { match ->
-                    content = content.replaceRange(match.range, "${match.groupValues[1]}!1${match.groupValues[4]}!1")
+                    content = content.replaceRange(match.range, "${match.groupValues[1]}!1${match.groupValues[3]}!1")
                     changed = true
                 }
             }
@@ -115,8 +129,8 @@ val unlimitedEnergyPatch = patch(
             }
         }
 
-        if (patchedCoreCount == 0) {
-            throw PatchException("Could not find the user-energy module in $CHUNKS_PREFIX.")
+        if (patchedGetCount == 0 || patchedConsumeCount == 0) {
+            throw PatchException("Could not find the user-energy module functions in $CHUNKS_PREFIX.")
         }
     }
 }

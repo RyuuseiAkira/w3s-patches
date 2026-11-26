@@ -12,7 +12,7 @@ private const val CHUNKS_PREFIX = "assets/public/_next/static/chunks/"
 private const val IDENT = """[A-Za-z_${'$'}][\w${'$'}]*"""
 
 private val DEBUG_TOOLS_ENV_REGEX = Regex(
-    """function ($IDENT)\(($IDENT)\)\{return"develop"===\2\|\|"staging"===\2\}""",
+    """function ($IDENT)\(($IDENT)\)\{return(?:(?:"develop"===\2|\2==="develop")\|\|(?:"staging"===\2|\2==="staging")|(?:"staging"===\2|\2==="staging")\|\|(?:"develop"===\2|\2==="develop"))\}""",
 )
 
 @Suppress("unused")

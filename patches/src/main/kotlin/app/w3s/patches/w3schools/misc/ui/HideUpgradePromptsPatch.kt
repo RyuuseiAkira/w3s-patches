@@ -12,11 +12,11 @@ private const val CHUNKS_PREFIX = "assets/public/_next/static/chunks/"
 private const val IDENT = """[A-Za-z_${'$'}][\w${'$'}]*"""
 
 private val STREAK_FREEZE_UPSELL_REGEX = Regex(
-    """!$IDENT\|\|$IDENT\|\|$IDENT(\?null:\(0,$IDENT\.jsx\)\($IDENT,\{freezesAvailable:$IDENT\.freezeAvailable\}\))""",
+    """(,)(?:!?$IDENT(?:\|\||&&))*!?$IDENT(\?null:\(0,$IDENT\.jsx\)\($IDENT,\{freezesAvailable:$IDENT\.freezeAvailable\}\))""",
 )
 
 private val DUEL_GO_UNLIMITED_REGEX = Regex(
-    """(,)$IDENT(&&\(0,$IDENT\.jsx\)\("button",\{type:"button",onClick:$IDENT,className:"font-bold text-\[color:var\(--clash-text\)\] underline",children:"Go unlimited"\}\))""",
+    """(,)$IDENT(&&\(0,$IDENT\.jsx\)\("button",\{type:"button",onClick:$IDENT,className:"[^"]*",children:"Go unlimited"\}\))""",
 )
 
 @Suppress("unused")
@@ -40,7 +40,7 @@ val hideUpgradePromptsPatch = patch(
 
             if (content.contains("StreakDayCounter") && content.contains("freezeAvailable")) {
                 STREAK_FREEZE_UPSELL_REGEX.find(content)?.let { match ->
-                    content = content.replaceRange(match.range, "!0${match.groupValues[1]}")
+                    content = content.replaceRange(match.range, "${match.groupValues[1]}!0${match.groupValues[2]}")
                     patchedCount++
                     changed = true
                 }

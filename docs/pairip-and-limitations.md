@@ -18,7 +18,7 @@ W3Schools bundles a Java-level Pairip wrapper (`Lcom/pairip/licensecheck/License
 Lcom/pairip/licensecheck/LicenseClient;->checkLicense(Landroid/content/Context;)V
 ```
 
-via `PairipCheckLicenseFingerprint` and prepends `return-void` at index `0` (`methodOrNull?.addInstructions(0, "return-void")`), short-circuiting the license check cleanly so sideloaded builds launch normally. If a future build strips Pairip, `methodOrNull` is a safe no-op.
+via `PairipCheckLicenseFingerprint` and prepends `return-void` at index `0` (`methodOrNull?.addInstructions(0, "return-void")`), plus optional `initializeLicenseCheck()` and `connectToLicensingService()` fallback stubs for newer Pairip variants, short-circuiting the license check cleanly so sideloaded builds launch normally. If a future build uses different methods or strips Pairip, `methodOrNull` is a safe no-op.
 
 ---
 
