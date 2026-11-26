@@ -1,3 +1,13 @@
+## [1.2.0](https://github.com/RyuuseiAkira/w3s-patches/compare/v1.1.0...v1.2.0) (2026-11-26)
+
+### ✨ New Features
+
+* add Hide upgrade prompts and Enable developer tools patches ([ea2a509](https://github.com/RyuuseiAkira/w3s-patches/commit/ea2a509046394fbcd0d0490ec7520c493bbb726c))
+
+### 🐛 Bug Fixes
+
+* publish v1.2.0-dev.3 prerelease ([fda22d6](https://github.com/RyuuseiAkira/w3s-patches/commit/fda22d62395691e1095680250315ed2fd76fe076))
+
 ## [1.2.0-dev.3](https://github.com/RyuuseiAkira/w3s-patches/compare/v1.2.0-dev.2...v1.2.0-dev.3) (2026-11-26)
 
 ### 🐛 Bug Fixes
