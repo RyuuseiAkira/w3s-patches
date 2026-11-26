@@ -27,6 +27,8 @@ All compatibility metadata lives in [`Constants.kt`](../patches/src/main/kotlin/
 | **Unlock curriculum map** | On (`true`) | Enabled | `pairipLicenseBypassPatch` | [unlock-curriculum-map.md](unlock-curriculum-map.md) |
 | **Bypass forced updates** | On (`true`) | Enabled | `pairipLicenseBypassPatch` | [bypass-forced-updates.md](bypass-forced-updates.md) |
 | **Disable tracking and analytics** | On (`true`) | Enabled | `pairipLicenseBypassPatch` | [disable-telemetry.md](disable-telemetry.md) |
+| **Hide upgrade prompts** | On (`true`) | Enabled | `pairipLicenseBypassPatch` | [hide-upgrade-prompts.md](hide-upgrade-prompts.md) |
+| **Enable developer tools** | Off (`false`) | Disabled by default | `pairipLicenseBypassPatch` | [enable-developer-tools.md](enable-developer-tools.md) |
 | **MicroG-RE support** | Off (`false`) | `DISABLED` (Standard / Shizuku), `UNAVAILABLE` (Mount) | `pairipLicenseBypassPatch` | [microg-re-support.md](microg-re-support.md) |
 | *Pairip license bypass* (internal) | Automatic | Shared dependency | — | [pairip-and-limitations.md](pairip-and-limitations.md) |
 
@@ -36,5 +38,7 @@ All compatibility metadata lives in [`Constants.kt`](../patches/src/main/kotlin/
 - **[Unlock curriculum map](unlock-curriculum-map.md)** — `resolveCurriculumAvailability` unlock and removal of `/course-overview` unlock upsells.
 - **[Bypass forced updates](bypass-forced-updates.md)** — Neutralizes remote `minimumClientBuild` blocking in `W3SAppUpdateProvider` and Play in-app review prompts.
 - **[Disable tracking and analytics](disable-telemetry.md)** — Disables Meta AppEvents, AdServices attribution, AAID/InstallReferrer collection, and RevenueCat diagnostic/event uploads.
+- **[Hide upgrade prompts](hide-upgrade-prompts.md)** — Removes remaining free-user upsell banners on `/streak` and `/duel`.
+- **[Enable developer tools](enable-developer-tools.md)** — Exposes built-in `/billing-debug` and `/devconsole` tools in Settings.
 - **[MicroG-RE support](microg-re-support.md)** — Dalvik bytecode stubs, string/authority rewrites, Android 14+ Credential Manager routing, and manifest spoofing for `app.revanced.android.gms`.
 - **[Pairip bypass & client/server boundaries](pairip-and-limitations.md)** — Internal Pairip startup license bypass and which W3Schools features remain server-enforced.
