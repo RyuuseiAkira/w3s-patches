@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-11-25T13:12:24",
-  "description": "## [1.1.0-dev.2](https://github.com/RyuuseiAkira/w3s-patches/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2026-11-25)\n\n### 🐛 Bug Fixes\n\n* remove Unlock avatar customization patch (server-enforced asset ownership) ([f798e49](https://github.com/RyuuseiAkira/w3s-patches/commit/f798e493f9565ddbe52380f196973f948bfbd3fd))",
-  "download_url": "https://github.com/RyuuseiAkira/w3s-patches/releases/download/v1.1.0-dev.2/patches-1.1.0-dev.2.mpp",
+  "created_at": "2026-11-26T12:46:11",
+  "description": "## [1.1.0](https://github.com/RyuuseiAkira/w3s-patches/compare/v1.0.1...v1.1.0) (2026-11-26)\n\n### ✨ New Features\n\n* add forced update bypass, telemetry opt-out, avatar unlock, and energy/overview UI polish ([aa721c6](https://github.com/RyuuseiAkira/w3s-patches/commit/aa721c6720a123c96f0c4f6202f64ad11e53a040))\n\n### 🐛 Bug Fixes\n\n* remove Unlock avatar customization patch (server-enforced asset ownership) ([f798e49](https://github.com/RyuuseiAkira/w3s-patches/commit/f798e493f9565ddbe52380f196973f948bfbd3fd))",
+  "download_url": "https://github.com/RyuuseiAkira/w3s-patches/releases/download/v1.1.0/patches-1.1.0.mpp",
   "signature_download_url": "",
-  "version": "1.1.0-dev.2"
+  "version": "1.1.0"
 }

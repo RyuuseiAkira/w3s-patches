@@ -1,3 +1,13 @@
+## [1.1.0](https://github.com/RyuuseiAkira/w3s-patches/compare/v1.0.1...v1.1.0) (2026-11-26)
+
+### ✨ New Features
+
+* add forced update bypass, telemetry opt-out, avatar unlock, and energy/overview UI polish ([aa721c6](https://github.com/RyuuseiAkira/w3s-patches/commit/aa721c6720a123c96f0c4f6202f64ad11e53a040))
+
+### 🐛 Bug Fixes
+
+* remove Unlock avatar customization patch (server-enforced asset ownership) ([f798e49](https://github.com/RyuuseiAkira/w3s-patches/commit/f798e493f9565ddbe52380f196973f948bfbd3fd))
+
 ## [1.1.0-dev.2](https://github.com/RyuuseiAkira/w3s-patches/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2026-11-25)
 
 ### 🐛 Bug Fixes

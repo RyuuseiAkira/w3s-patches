@@ -23,7 +23,7 @@ For Google Sign-In, install [**MicroG-RE**](https://github.com/MorpheApp/MicroG-
 ## 🩹 Patches
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.1.0-dev.2](https://github.com/RyuuseiAkira/w3s-patches/releases/tag/v1.1.0-dev.2)**&nbsp;&nbsp;•&nbsp;&nbsp;5 patches total
+> **[v1.1.0](https://github.com/RyuuseiAkira/w3s-patches/releases/tag/v1.1.0)**&nbsp;&nbsp;•&nbsp;&nbsp;5 patches total
 <details open>
 <summary>📦 W3Schools&nbsp;&nbsp;•&nbsp;&nbsp;5 patches</summary>
 <br>
